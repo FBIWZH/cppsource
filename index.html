@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CppSource</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-toc@1.0.0/dist/toc.css">
+  <link 
+    rel="stylesheet"
+    href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css"
+    title="docsify-darklight-theme"
+    type="text/css"
+/>
+</head>
+<body>
+  <div id="app">精彩即将开始...</div>
+  <script>
+    window.$docsify = {
+      themeColor: "#116ECD",
+      loadSidebar: true,
+      name: "CppSource",
+      search: {
+        maxAge: 3600000,// 过期时间，单位毫秒，默认一天
+        paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
+        placeholder: '搜索',
+        // 支持本地化
+        placeholder: {
+          '/zh-cn/': '搜索',
+          '/': '搜索'
+        },
+        noData: '找不到结果',
+        depth: 4,
+        hideOtherSidebarContent: false,
+        namespace: 'RapidDownload',
+        sidebarDisplayLevel: 1,
+      },
+      count:{    
+        countable: true,    
+        position: 'top',    
+        margin: '10px',    
+        float: 'right',    
+        fontsize:'0.9em',    
+        color:'rgb(90,90,90)',    
+        language:'chinese',    
+        localization: {      
+          words: "",      
+          minute: ""    
+        },    
+        isExpected: true  
+      },
+    }
+  </script>
+  <!-- Docsify v4 -->
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-toc@1.0.0/dist/toc.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-count/dist/countable.min.js"></script>
+  <script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
+  <script src="theme.js"></script>
+  <script>
+    function move() {
+      document.getElementsByClassName('sidebar')[0].setAttribute('id', 'sidebar-full')
+      document.getElementById('sidebar-full').appendChild(document.getElementById('docsify-darklight-theme'))
+      var button = document.getElementById('docsify-darklight-theme')
+      button.style.position = 'fixed'
+      button.style.left = '10px'
+      button.style.bottom = '58px'
+      button.style.top = 'auto'
+      button.style.width = '18px'
+      button.style.height = '18px'
+    }
+    var refreshId = setInterval(function () {
+      if (null != document.getElementById('docsify-darklight-theme')) {
+        move();
+        clearInterval(refreshId);
+      }
+    }, 100);
+</script>
+</body>
+</html>
